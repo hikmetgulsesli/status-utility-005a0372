@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status Page - Status Utility</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans antialiased">
+  <div data-surface-id="SURF_STATUS_PAGE" data-route="/status" class="flex-1 flex flex-col justify-between">
+    <!-- Header -->
+    <header class="w-full border-b border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="h-9 w-9 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-sm tracking-wider">
+            SU
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-slate-900 leading-none">Status Utility</div>
+            <div class="text-xs text-slate-500 font-mono mt-1">/status</div>
+          </div>
+        </div>
+        <div>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+            Operational
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-12 flex items-center justify-center">
+      <div class="w-full max-w-lg bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-6">
+        <div>
+          <h1 class="text-xl font-bold text-slate-900 tracking-tight">System Status</h1>
+          <p class="text-sm text-slate-500 mt-1">Monitor and refresh your application telemetry state.</p>
+        </div>
+
+        <!-- Contained Surface: SURF_STATUS_DISPLAY -->
+        <div data-surface-id="SURF_STATUS_DISPLAY" value="refreshed" data-value="refreshed" class="rounded-lg border border-slate-200 bg-slate-50/50 p-4 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <div>
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Current State</div>
+              <div class="text-sm font-semibold text-slate-800">Status refreshed</div>
+            </div>
+          </div>
+          <span class="font-mono text-xs text-slate-600 bg-white border border-slate-200 px-2 py-1 rounded">refreshed</span>
+        </div>
+
+        <!-- Physical Control Slot: CSLOT_REFRESH_STATUS_REFRESH_BUTTON -->
+        <div class="flex justify-end pt-2">
+          <button type="button" data-action="ACT_REFRESH_STATUS" data-control-slot="CSLOT_REFRESH_STATUS_REFRESH_BUTTON" class="inline-flex items-center justify-center px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">Refresh</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-200 bg-white">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between text-xs text-slate-500">
+        <div>Status Utility System &#169; 2025</div>
+        <div class="font-mono text-slate-400">Route: /status</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
